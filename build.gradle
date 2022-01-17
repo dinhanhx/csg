@@ -25,7 +25,7 @@ tasks.withType(JavaCompile) {
 
 application {
     mainModule = 'usth.based.csg'
-    mainClass = 'usth.based.csg.HelloApplication'
+    mainClass = 'usth.based.csg.MainApplication'
 }
 
 javafx {
@@ -57,6 +57,6 @@ jlinkZip {
 
 jar {
     manifest {
-        attributes "Main-Class" : "usth.based.csg.HelloApplication"
+        attributes "Main-Class" : "usth.based.csg.MainApplication"
     }
 }
