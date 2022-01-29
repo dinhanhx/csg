@@ -40,5 +40,3 @@ public class JavaFX_Info extends Application {
     public static void main(String[] args) {
         launch(args);
     }
-
-}
