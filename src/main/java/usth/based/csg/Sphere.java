@@ -8,6 +8,11 @@ public class Sphere implements Primitive {
     private int radius;
     private Point3D center;
 
+    /**
+     *
+     * @param radius positive integer
+     * @param center Point3D
+     */
     Sphere(int radius, Point3D center) {
         this.radius = radius;
         this.center = center;

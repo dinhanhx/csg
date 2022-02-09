@@ -5,6 +5,11 @@ import javafx.geometry.Point3D;
 import java.util.ArrayList;
 
 public class PrimitiveFactory {
+    /**
+     *
+     * @param type SPHERE, CUBE, CYLINDER, PYRAMID, PARALLELEPIPED
+     * @return unit primitive objects respect to @param type
+     */
     public Primitive makePrimitive(String type) {
         if (type.equalsIgnoreCase("SPHERE")) {
             return new Sphere(1, Point3D.ZERO);

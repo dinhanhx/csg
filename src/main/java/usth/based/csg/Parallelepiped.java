@@ -11,6 +11,7 @@ public class Parallelepiped implements Primitive{
     /**
      *
      * @param vertices have 4 elements: basePoint, 3 vertices
+     * https://en.wikipedia.org/wiki/Parallelepiped#Volume
      */
     public Parallelepiped(ArrayList<Point3D> vertices) {
         this.vertices = vertices;

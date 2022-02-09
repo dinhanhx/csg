@@ -7,6 +7,11 @@ public class Cube implements Primitive{
     private int sideLength;
     private Point3D center;
 
+    /**
+     *
+     * @param sideLength positive integer
+     * @param center Point3D
+     */
     public Cube(int sideLength, Point3D center) {
         this.sideLength = sideLength;
         this.center = center;

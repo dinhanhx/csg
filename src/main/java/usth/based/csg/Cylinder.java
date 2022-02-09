@@ -8,6 +8,12 @@ public class Cylinder implements Primitive{
     private int height;
     private Point3D basePoint;
 
+    /**
+     *
+     * @param radius positive integer
+     * @param height positive integer
+     * @param basePoint Point3D
+     */
     public Cylinder(int radius, int height, Point3D basePoint) {
         this.radius = radius;
         this.height = height;
