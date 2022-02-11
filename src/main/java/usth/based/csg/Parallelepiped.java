@@ -1,7 +1,7 @@
 package usth.based.csg;
 
 import javafx.geometry.Point3D;
-import javafx.scene.shape.MeshView;
+import javafx.scene.shape.TriangleMesh;
 
 import java.util.ArrayList;
 
@@ -18,12 +18,12 @@ public class Parallelepiped implements Primitive{
     }
 
     @Override
-    public void setMeshView(MeshView meshView) {
+    public void setTriangleMesh(TriangleMesh triangleMesh) {
 
     }
 
     @Override
-    public MeshView getMeshView() {
+    public TriangleMesh getTriangleMesh() {
         return null;
     }
 

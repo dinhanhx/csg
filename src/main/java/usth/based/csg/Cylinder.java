@@ -1,7 +1,7 @@
 package usth.based.csg;
 
 import javafx.geometry.Point3D;
-import javafx.scene.shape.MeshView;
+import javafx.scene.shape.TriangleMesh;
 
 public class Cylinder implements Primitive{
     private int radius;
@@ -21,12 +21,12 @@ public class Cylinder implements Primitive{
     }
 
     @Override
-    public void setMeshView(MeshView meshView) {
+    public void setTriangleMesh(TriangleMesh triangleMesh) {
 
     }
 
     @Override
-    public MeshView getMeshView() {
+    public TriangleMesh getTriangleMesh() {
         return null;
     }
 

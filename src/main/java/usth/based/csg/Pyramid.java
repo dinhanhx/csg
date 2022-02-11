@@ -1,7 +1,7 @@
 package usth.based.csg;
 
 import javafx.geometry.Point3D;
-import javafx.scene.shape.MeshView;
+import javafx.scene.shape.TriangleMesh;
 
 public class Pyramid implements Primitive{
     private int basePointToVertexDistance;
@@ -19,12 +19,12 @@ public class Pyramid implements Primitive{
     }
 
     @Override
-    public void setMeshView(MeshView meshView) {
+    public void setTriangleMesh(TriangleMesh triangleMesh) {
 
     }
 
     @Override
-    public MeshView getMeshView() {
+    public TriangleMesh getTriangleMesh() {
         return null;
     }
 
