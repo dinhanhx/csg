@@ -17,16 +17,16 @@ public class MainApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         //Drawing a cylinder
-        Cylinder cylinder = new Cylinder(30.0,100.0);
+        Sphere sphere = new Sphere(50);
         Translate translate = new Translate(250,100,100);
-        cylinder.getTransforms().addAll(translate);
+        sphere.getTransforms().addAll(translate);
 
         PhongMaterial material5 = new PhongMaterial();
         material5.setDiffuseColor(Color.BLANCHEDALMOND);
 
-        cylinder.setMaterial(material5);
+        sphere.setMaterial(material5);
 
-        Group root = new Group(cylinder);
+        Group root = new Group(sphere);
 
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("main-view.fxml"));
         //Scene scene = new Scene(fxmlLoader.load(), 320, 240);
