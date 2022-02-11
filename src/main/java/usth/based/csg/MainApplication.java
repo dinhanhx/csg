@@ -1,19 +1,32 @@
+package usth.based.csg;
 import javafx.application.Application;
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
-public class JavaFX_Info extends Application {
+public class MainApplication extends Application {
     private double xOffset = 0;
     private double yOffset = 0;
 
+//
+//    private Button logoutButton;
+//    private AnchorPane scenePane;
+//    Stage stage;
+//    public void setLogoutButton(ActionEvent event){
+//
+//        stage = (Stage)scenePane.getScene().getWindow();
+//        stage.close();
+//    }
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("App.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("App2.fxml"));
         stage.initStyle(StageStyle.UNDECORATED);
 
         root.setOnMousePressed(new EventHandler<MouseEvent>() {
@@ -37,6 +50,9 @@ public class JavaFX_Info extends Application {
         stage.show();
     }
 
+
+
     public static void main(String[] args) {
         launch(args);
     }
+}

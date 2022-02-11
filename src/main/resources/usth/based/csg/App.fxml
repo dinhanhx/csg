@@ -48,6 +48,7 @@
                </children>
             </Pane>
             <Button layoutX="53.0" layoutY="325.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="131.0" text="Caculate" />
+<!--          <Button layoutX="355" layoutY="0" mnemonicParsing="false" prefHeight="44.0" prefWidth="131.0" text="Close" />-->
             <Pane layoutX="268.0" prefHeight="400.0" prefWidth="400.0">
                <children>
                   <Label layoutX="178.0" layoutY="192.0" text="Result" />
