@@ -13,19 +13,16 @@ import java.io.IOException;
 public class MainApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        //Creating a Text object
-        Text text = new Text();
+        //Drawing a Rectangle
+        Rectangle rectangle = new Rectangle();
 
-        //Setting font to the text
-        text.setFont(new Font(45));
-
-        //setting the position of the text
-        text.setX(250);
-        text.setY(150);
-
-        //Setting the text to be added.
-        text.setText("USTH");
-        Group root = new Group(text);
+        //Setting the properties of the rectangle
+        rectangle.setX(150.0f);
+        rectangle.setY(75.0f);
+        rectangle.setWidth(300.0f);
+        rectangle.setHeight(150.0f);
+        //Creating a Group object
+        Group root = new Group(rectangle);
 
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("main-view.fxml"));
         //Scene scene = new Scene(fxmlLoader.load(), 320, 240);
