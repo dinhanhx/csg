@@ -13,16 +13,18 @@ import java.io.IOException;
 public class MainApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        //Drawing a Rectangle
-        Rectangle rectangle = new Rectangle();
+        //Creating a Polygon
+        Polygon polygon = new Polygon();
 
-        //Setting the properties of the rectangle
-        rectangle.setX(150.0f);
-        rectangle.setY(75.0f);
-        rectangle.setWidth(300.0f);
-        rectangle.setHeight(150.0f);
-        //Creating a Group object
-        Group root = new Group(rectangle);
+        //Adding coordinates to the polygon
+        polygon.getPoints().addAll(new Double[]{
+                300.0, 50.0,
+                450.0, 150.0,
+                300.0, 250.0,
+                150.0, 150.0,
+                230.0, 120.0
+        });
+        Group root = new Group(polygon);
 
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("main-view.fxml"));
         //Scene scene = new Scene(fxmlLoader.load(), 320, 240);
