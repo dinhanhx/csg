@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
 import javafx.scene.PerspectiveCamera;
 import javafx.scene.Scene;
+import javafx.scene.paint.*;
 import javafx.scene.shape.*;
 import javafx.scene.text.*;
 import javafx.scene.transform.*;
@@ -15,18 +16,17 @@ import java.io.IOException;
 public class MainApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        //Drawing a Box
-        Box box = new Box();
+        //Drawing a cylinder
+        Cylinder cylinder = new Cylinder(30.0,100.0);
+        Translate translate = new Translate(250,100,100);
+        cylinder.getTransforms().addAll(translate);
 
-        //Setting the properties of the Box
-        box.setWidth(80.0);
-        box.setHeight(50.0);
-        box.setDepth(100.0);    
+        PhongMaterial material5 = new PhongMaterial();
+        material5.setDiffuseColor(Color.BLANCHEDALMOND);
 
-        Translate translate = new Translate(250,100,0);
-        Rotate rotate = new Rotate(30,250,100);
-        box.getTransforms().addAll(translate);
-        Group root = new Group(box);
+        cylinder.setMaterial(material5);
+
+        Group root = new Group(cylinder);
 
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("main-view.fxml"));
         //Scene scene = new Scene(fxmlLoader.load(), 320, 240);
@@ -34,7 +34,7 @@ public class MainApplication extends Application {
         //Setting camera
         PerspectiveCamera camera = new PerspectiveCamera(false);
         camera.setTranslateX(0);
-        camera.setTranslateY(0);
+        camera.setTranslateY(-120);
         camera.setTranslateZ(0);
         scene.setCamera(camera);
         stage.setTitle("Hello!");
