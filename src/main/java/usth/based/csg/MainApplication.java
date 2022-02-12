@@ -22,12 +22,11 @@ public class MainApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
 
-        TriangleMesh mesh1 = new createshape(100,50);
+        TriangleMesh mesh1 = new createshape(100,50,0,0,0);
         MeshView meshview1 = new MeshView(mesh1);
 
-        TriangleMesh mesh2 = new createshape(50,50);
+        TriangleMesh mesh2 = new createshape(50,50,100,0,0);
         MeshView meshview2 = new MeshView(mesh2);
-        meshview2.setTranslateX(400);
 
         TriangleMesh unionmesh = new TriangleMesh();
 
@@ -37,10 +36,10 @@ public class MainApplication extends Application {
         unionmesh.getTexCoords().addAll(mesh2.getTexCoords());
         unionmesh.getFaces().addAll(mesh1.getFaces());
         unionmesh.getFaces().addAll(mesh2.getFaces());
-        System.out.print(unionmesh.getTexCoords());
+        //System.out.print(unionmesh.getFaces());
         MeshView meshviewunion = new MeshView(unionmesh);
         Group root = new Group();
-        root.getChildren().addAll(meshviewunion);
+        root.getChildren().addAll(meshview1, meshview2);
 
 
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("main-view.fxml"));

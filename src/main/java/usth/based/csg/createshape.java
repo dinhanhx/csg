@@ -7,7 +7,7 @@ import javafx.scene.shape.TriangleMesh;
 
 public class createshape extends TriangleMesh {
 
-    public createshape(float radius, int triangles) {
+    public createshape(float radius, int triangles, float initx, float inity, float initz) {
 
         double phimin = 0;
         double phimax = 6.28;
@@ -21,7 +21,7 @@ public class createshape extends TriangleMesh {
             for (int j = 0; j < triangles + 1; j++) {
                 Point3D p3D = new Point3D((float) (radius * Math.cos(theta) * Math.sin(phi)),
                         (float) (radius * Math.cos(theta) * Math.cos(phi)), (float) (radius * Math.sin(theta)));
-                this.getPoints().addAll(new Float(p3D.getX()), new Float(p3D.getY()), new Float(p3D.getZ()));
+                this.getPoints().addAll(new Float(p3D.getX()) + initx, new Float(p3D.getY())+inity, new Float(p3D.getZ())+initz);
                 theta += (thetamax - thetamin) / triangles;
             }
             phi += (phimax - phimin) / triangles;
