@@ -15,6 +15,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import static usth.based.csg.Operation.union;
 import static usth.based.csg.createshape.*;
 
 
@@ -30,16 +31,10 @@ public class MainApplication extends Application {
 
         TriangleMesh unionmesh = new TriangleMesh();
 
-        unionmesh.getPoints().addAll(mesh1.getPoints());
-        unionmesh.getPoints().addAll(mesh2.getPoints());
-        unionmesh.getTexCoords().addAll(mesh1.getTexCoords());
-        unionmesh.getTexCoords().addAll(mesh2.getTexCoords());
-        unionmesh.getFaces().addAll(mesh1.getFaces());
-        unionmesh.getFaces().addAll(mesh2.getFaces());
-        //System.out.print(unionmesh.getFaces());
+        unionmesh = union(mesh1, mesh2);
         MeshView meshviewunion = new MeshView(unionmesh);
         Group root = new Group();
-        root.getChildren().addAll(meshview1, meshview2);
+        root.getChildren().addAll(meshviewunion);
 
 
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("main-view.fxml"));
