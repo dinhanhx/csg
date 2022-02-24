@@ -20,18 +20,20 @@ public class MainApplication extends Application {
         //Sphere sphere1 = new Sphere(100, Point3D.ZERO);
         Sphere sphere2 = new Sphere(50, new Point3D(50, 0, 0));
 
-        Cylinder cy1 = new Cylinder(64,30f,100f,Point3D.ZERO);
-        TriangleMesh um = union(sphere2.getTriangleMesh(), cy1.getTriangleMesh());
+        //Cylinder cy1 = new Cylinder(64,30f,100f,Point3D.ZERO);
+        Box bo1 = new Box(50,50,50, Point3D.ZERO);
+        TriangleMesh bo = bo1.getTriangleMesh();
+       // TriangleMesh um = union(sphere2.getTriangleMesh(), cy1.getTriangleMesh());
 //        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("main-view.fxml"));
 //        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
 
         Group root = new Group();
-        root.getChildren().addAll(new MeshView(um));
+        root.getChildren().addAll(new MeshView(bo));
 
         Scene scene = new Scene(root, 600, 300);
         //Setting camera
         PerspectiveCamera camera = new PerspectiveCamera(false);
-        camera.setTranslateX(-100);
+        camera.setTranslateX(-200);
         camera.setTranslateY(-100);
         camera.setTranslateZ(0);
         scene.setCamera(camera);

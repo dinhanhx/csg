@@ -194,7 +194,13 @@ public class Cylinder implements Primitive{
     public float getRadius() { return radius;    }
 
     public void setRadius(int radius) {
-        this.radius = radius;
+        this.div = div;
+    }
+
+    public float getdivision() { return div;    }
+
+    public void setdivision(int div) {
+        this.div = div;
     }
 
     public float getHeight() {
