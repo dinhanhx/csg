@@ -4,8 +4,9 @@ import javafx.geometry.Point3D;
 import javafx.scene.shape.TriangleMesh;
 
 public class Cylinder implements Primitive{
-    private int radius;
-    private int height;
+    private float radius;
+    private float height;
+    private int   div;
     private Point3D basePoint;
 
     /**
@@ -14,7 +15,7 @@ public class Cylinder implements Primitive{
      * @param height positive integer
      * @param basePoint Point3D
      */
-    public Cylinder(int radius, int height, Point3D basePoint) {
+    public Cylinder(int div, float radius, float height, Point3D basePoint) {
         this.radius = radius;
         this.height = height;
         this.basePoint = basePoint;
@@ -30,15 +31,13 @@ public class Cylinder implements Primitive{
         return null;
     }
 
-    public int getRadius() {
-        return radius;
-    }
+    public float getRadius() { return radius;    }
 
     public void setRadius(int radius) {
         this.radius = radius;
     }
 
-    public int getHeight() {
+    public float getHeight() {
         return height;
     }
 
