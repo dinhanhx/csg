@@ -7,6 +7,7 @@ import java.util.ArrayList;
 
 public class Parallelepiped implements Primitive{
     private ArrayList<Point3D> vertices;
+    private final TriangleMesh triangleMesh;
 
     /**
      *
@@ -15,16 +16,14 @@ public class Parallelepiped implements Primitive{
      */
     public Parallelepiped(ArrayList<Point3D> vertices) {
         this.vertices = vertices;
-    }
 
-    @Override
-    public void setTriangleMesh(TriangleMesh triangleMesh) {
-
+        // TODO un-null triangleMesh
+        this.triangleMesh = null;
     }
 
     @Override
     public TriangleMesh getTriangleMesh() {
-        return null;
+        return this.triangleMesh;
     }
 
     public ArrayList<Point3D> getVertices() {

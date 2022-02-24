@@ -7,6 +7,7 @@ public class Cylinder implements Primitive{
     private int radius;
     private int height;
     private Point3D basePoint;
+    private final TriangleMesh triangleMesh;
 
     /**
      *
@@ -18,16 +19,14 @@ public class Cylinder implements Primitive{
         this.radius = radius;
         this.height = height;
         this.basePoint = basePoint;
-    }
 
-    @Override
-    public void setTriangleMesh(TriangleMesh triangleMesh) {
-
+        // TODO un-null triangleMesh
+        this.triangleMesh = null;
     }
 
     @Override
     public TriangleMesh getTriangleMesh() {
-        return null;
+        return this.triangleMesh;
     }
 
     public int getRadius() {
