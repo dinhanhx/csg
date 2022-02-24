@@ -6,6 +6,7 @@ import javafx.scene.shape.TriangleMesh;
 public class Cube implements Primitive{
     private int sideLength;
     private Point3D center;
+    private final TriangleMesh triangleMesh;
 
     /**
      *
@@ -15,16 +16,14 @@ public class Cube implements Primitive{
     public Cube(int sideLength, Point3D center) {
         this.sideLength = sideLength;
         this.center = center;
-    }
 
-    @Override
-    public void setTriangleMesh(TriangleMesh triangleMesh) {
-
+        // TODO un-null triangleMesh
+        this.triangleMesh = null;
     }
 
     @Override
     public TriangleMesh getTriangleMesh() {
-        return null;
+        return this.triangleMesh;
     }
 
     public int getSideLength() {
