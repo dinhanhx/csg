@@ -8,6 +8,7 @@ public class Cylinder implements Primitive{
     private float height;
     private int   div;
     private Point3D basePoint;
+    private TriangleMesh triangleMesh;
 
     /**
      *
@@ -173,6 +174,10 @@ public class Cylinder implements Primitive{
         for (int i = div * 2; i < div * 4; ++i) {
             smoothing[i] = 2;
         }
+        this.triangleMesh = new TriangleMesh();
+        triangleMesh.getPoints().setAll(points);
+        triangleMesh.getTexCoords().setAll(tPoints);
+        triangleMesh.getFaces().setAll(faces);
     }
 
     @Override
