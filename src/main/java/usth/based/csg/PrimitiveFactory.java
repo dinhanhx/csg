@@ -20,7 +20,7 @@ public class PrimitiveFactory {
         }
 
         if (type.equalsIgnoreCase("CYLINDER")) {
-            return new Cylinder(1, 1, Point3D.ZERO);
+            return new Cylinder(1,1, 1, Point3D.ZERO);
         }
 
         if (type.equalsIgnoreCase("PYRAMID")) {
