@@ -17,8 +17,47 @@ public class Cube implements Primitive{
         this.sideLength = sideLength;
         this.center = center;
 
-        // TODO un-null triangleMesh
-        this.triangleMesh = null;
+        // NOTE: still create mesh for degenerated box
+        float hw = sideLength / 2f;
+        float hh = sideLength / 2f;
+        float hd = sideLength / 2f;
+
+        float[] points = {
+                -hw, -hh, -hd,
+                hw, -hh, -hd,
+                hw,  hh, -hd,
+                -hw,  hh, -hd,
+                -hw, -hh,  hd,
+                hw, -hh,  hd,
+                hw,  hh,  hd,
+                -hw,  hh,  hd};
+
+        float[] texCoords = {0, 0, 1, 0, 1, 1, 0, 1};
+
+        // Specifies hard edges.
+        int faceSmoothingGroups[] = {
+                0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        };
+
+        int[] faces = {
+                0, 0, 2, 2, 1, 1,
+                2, 2, 0, 0, 3, 3,
+                1, 0, 6, 2, 5, 1,
+                6, 2, 1, 0, 2, 3,
+                5, 0, 7, 2, 4, 1,
+                7, 2, 5, 0, 6, 3,
+                4, 0, 3, 2, 0, 1,
+                3, 2, 4, 0, 7, 3,
+                3, 0, 6, 2, 2, 1,
+                6, 2, 3, 0, 7, 3,
+                4, 0, 1, 2, 5, 1,
+                1, 2, 4, 0, 0, 3,
+        };
+
+        this.triangleMesh = new TriangleMesh();
+        triangleMesh.getPoints().setAll(points);
+        triangleMesh.getTexCoords().setAll(texCoords);
+        triangleMesh.getFaces().setAll(faces);
     }
 
     @Override
