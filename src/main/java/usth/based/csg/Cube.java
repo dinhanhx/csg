@@ -3,10 +3,8 @@ package usth.based.csg;
 import javafx.geometry.Point3D;
 import javafx.scene.shape.TriangleMesh;
 
-public class Box implements Primitive{
-    private float width;
-    private float height;
-    private float depth;
+public class Cube implements Primitive{
+    private int sideLength;
     private Point3D center;
     private TriangleMesh triangleMesh;
 
@@ -15,18 +13,16 @@ public class Box implements Primitive{
      *
      * @param center Point3D
      */
-    public Box(float width, float height, float depth, Point3D center) {
-        this.width = width;
-        this.depth = depth;
-        this.height = height;
+    public Cube(int sideLength, Point3D center) {
+        this.sideLength = sideLength;
         this.center = center;
 
         // NOTE: still create mesh for degenerated box
-        float hw = width / 2f;
-        float hh = height / 2f;
-        float hd = depth / 2f;
+        float hw = sideLength / 2f;
+        float hh = sideLength / 2f;
+        float hd = sideLength / 2f;
 
-        float points[] = {
+        float[] points = {
                 -hw, -hh, -hd,
                 hw, -hh, -hd,
                 hw,  hh, -hd,
@@ -36,14 +32,14 @@ public class Box implements Primitive{
                 hw,  hh,  hd,
                 -hw,  hh,  hd};
 
-        float texCoords[] = {0, 0, 1, 0, 1, 1, 0, 1};
+        float[] texCoords = {0, 0, 1, 0, 1, 1, 0, 1};
 
         // Specifies hard edges.
         int faceSmoothingGroups[] = {
                 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
         };
 
-        int faces[] = {
+        int[] faces = {
                 0, 0, 2, 2, 1, 1,
                 2, 2, 0, 0, 3, 3,
                 1, 0, 6, 2, 5, 1,
@@ -75,28 +71,12 @@ public class Box implements Primitive{
         return this.triangleMesh;
     }
 
-    public float getWidth() {
-        return width;
+    public int getSideLength() {
+        return sideLength;
     }
 
-    public void setWidth(int width) {
-        this.width = width;
-    }
-
-    public float getHeight() {
-        return height;
-    }
-
-    public void setHeight(int height) {
-        this.height = height;
-    }
-
-    public float getDepth() {
-        return depth;
-    }
-
-    public void setDepth(int depth) {
-        this.depth = depth;
+    public void setSideLength(int sideLength) {
+        this.sideLength = sideLength;
     }
 
     public Point3D getCenter() {

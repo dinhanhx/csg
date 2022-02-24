@@ -16,7 +16,7 @@ public class PrimitiveFactory {
         }
 
         if (type.equalsIgnoreCase("CUBE")) {
-            return new Box(1,1,1, Point3D.ZERO);
+            return new Cube(1, Point3D.ZERO);
         }
 
         if (type.equalsIgnoreCase("CYLINDER")) {
