@@ -17,10 +17,11 @@ import static usth.based.csg.Operation.union;
 public class MainApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        Sphere sphere1 = new Sphere(100, Point3D.ZERO);
+        //Sphere sphere1 = new Sphere(100, Point3D.ZERO);
         Sphere sphere2 = new Sphere(50, new Point3D(50, 0, 0));
-        TriangleMesh um = union(sphere1.getTriangleMesh(), sphere2.getTriangleMesh());
 
+        Cylinder cy1 = new Cylinder(64,30f,100f,Point3D.ZERO);
+        TriangleMesh um = union(sphere2.getTriangleMesh(), cy1.getTriangleMesh());
 //        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("main-view.fxml"));
 //        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
 

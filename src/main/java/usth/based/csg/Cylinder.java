@@ -178,16 +178,17 @@ public class Cylinder implements Primitive{
         triangleMesh.getPoints().setAll(points);
         triangleMesh.getTexCoords().setAll(tPoints);
         triangleMesh.getFaces().setAll(faces);
+        //triangleMesh.getFaceSmoothingGroups().setAll(smoothing);
     }
 
     @Override
     public void setTriangleMesh(TriangleMesh triangleMesh) {
-
+        this.triangleMesh = triangleMesh;
     }
 
     @Override
     public TriangleMesh getTriangleMesh() {
-        return null;
+        return this.triangleMesh;
     }
 
     public float getRadius() { return radius;    }
