@@ -21,8 +21,8 @@ public class MainApplication extends Application {
         Sphere sphere2 = new Sphere(50, new Point3D(50, 0, 0));
 
         //Cylinder cy1 = new Cylinder(64,30f,100f,Point3D.ZERO);
-        Box bo1 = new Box(50,50,50, Point3D.ZERO);
-        TriangleMesh bo = bo1.getTriangleMesh();
+        Cube cube = new Cube(50, Point3D.ZERO);
+        TriangleMesh bo = cube.getTriangleMesh();
        // TriangleMesh um = union(sphere2.getTriangleMesh(), cy1.getTriangleMesh());
 //        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("main-view.fxml"));
 //        Scene scene = new Scene(fxmlLoader.load(), 320, 240);

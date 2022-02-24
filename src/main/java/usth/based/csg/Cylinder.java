@@ -8,12 +8,13 @@ public class Cylinder implements Primitive{
     private float height;
     private int   div;
     private Point3D basePoint;
-    private TriangleMesh triangleMesh;
+    private final TriangleMesh triangleMesh;
 
     /**
      *
-     * @param radius positive integer
-     * @param height positive integer
+     * @param div positive integer
+     * @param radius positive float
+     * @param height positive float
      * @param basePoint Point3D
      */
     public Cylinder(int div, float radius, float height, Point3D basePoint) {
@@ -182,11 +183,6 @@ public class Cylinder implements Primitive{
     }
 
     @Override
-    public void setTriangleMesh(TriangleMesh triangleMesh) {
-        this.triangleMesh = triangleMesh;
-    }
-
-    @Override
     public TriangleMesh getTriangleMesh() {
         return this.triangleMesh;
     }
@@ -194,10 +190,12 @@ public class Cylinder implements Primitive{
     public float getRadius() { return radius;    }
 
     public void setRadius(int radius) {
-        this.div = div;
+        this.radius = radius;
     }
 
-    public float getdivision() { return div;    }
+    public float getdivision() {
+        return div;
+    }
 
     public void setdivision(int div) {
         this.div = div;
