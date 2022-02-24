@@ -4,10 +4,10 @@ import javafx.geometry.Point3D;
 import javafx.scene.shape.TriangleMesh;
 
 public class Sphere implements Primitive {
-
     private int radius;
     private Point3D center;
-    private TriangleMesh triangleMesh;
+    private final TriangleMesh triangleMesh;
+
     /**
      *
      * @param radius positive integer
@@ -52,11 +52,6 @@ public class Sphere implements Primitive {
                 triangleMesh.getFaces().addAll(j - 1, 0, j + triangles, 0, j + triangles + 1, 0);
             }
         }
-    }
-
-    @Override
-    public void setTriangleMesh(TriangleMesh triangleMesh) {
-        this.triangleMesh = triangleMesh;
     }
 
     @Override

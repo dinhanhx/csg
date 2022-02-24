@@ -8,6 +8,5 @@ import javafx.scene.shape.TriangleMesh;
  * CSG operations will work via MeshView
  */
 public interface Primitive {
-    void setTriangleMesh(TriangleMesh triangleMesh);
     TriangleMesh getTriangleMesh();
 }

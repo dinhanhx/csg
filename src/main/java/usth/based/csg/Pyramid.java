@@ -6,6 +6,7 @@ import javafx.scene.shape.TriangleMesh;
 public class Pyramid implements Primitive{
     private int basePointToVertexDistance;
     private Point3D basePoint;
+    private final TriangleMesh triangleMesh;
 
     /**
      *
@@ -16,16 +17,14 @@ public class Pyramid implements Primitive{
     public Pyramid(int basePointToVertexDistance, Point3D basePoint) {
         this.basePointToVertexDistance = basePointToVertexDistance;
         this.basePoint = basePoint;
-    }
 
-    @Override
-    public void setTriangleMesh(TriangleMesh triangleMesh) {
-
+        // TODO un-null triangleMesh
+        this.triangleMesh = null;
     }
 
     @Override
     public TriangleMesh getTriangleMesh() {
-        return null;
+        return this.triangleMesh;
     }
 
     public int getBasePointToVertexDistance() {
