@@ -19,6 +19,7 @@ public class Operation {
         // Add all TexCoords
         um.getTexCoords().addAll(tm1.getTexCoords());
         um.getTexCoords().addAll(tm2.getTexCoords());
+
         // Add all Faces
         // https://stackoverflow.com/a/30334473/13358358
         um.getFaces().addAll(tm1.getFaces());
