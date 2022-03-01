@@ -6,7 +6,7 @@ import javafx.scene.shape.TriangleMesh;
 public class Sphere implements Primitive {
     private int radius;
     private Point3D center;
-    private final TriangleMesh triangleMesh;
+    private TriangleMesh triangleMesh;
 
     /**
      *
@@ -18,8 +18,12 @@ public class Sphere implements Primitive {
         this.center = center;
 
         // The magic starts here
+        buildTriangleMesh();
+    }
+
+    private void buildTriangleMesh() {
         this.triangleMesh = new TriangleMesh();
-        int triangles = radius * 3;
+        int triangles = this.radius * 3;
         double phimin = 0;
         double phimax = 6.28;
         double phi = phimin;
@@ -30,12 +34,12 @@ public class Sphere implements Primitive {
         for (int i = 0; i < triangles + 1; i++) {
             theta = thetamin;
             for (int j = 0; j < triangles + 1; j++) {
-                Point3D p3D = new Point3D((float) (radius * Math.cos(theta) * Math.sin(phi)),
-                        (float) (radius * Math.cos(theta) * Math.cos(phi)),
-                        (float) (radius * Math.sin(theta)));
-                triangleMesh.getPoints().addAll((float) ((float) p3D.getX() + center.getX()),
-                        (float) ((float) p3D.getY() + center.getY()),
-                        (float) ((float) p3D.getZ() + center.getZ()));
+                Point3D p3D = new Point3D((float) (this.radius * Math.cos(theta) * Math.sin(phi)),
+                        (float) (this.radius * Math.cos(theta) * Math.cos(phi)),
+                        (float) (this.radius * Math.sin(theta)));
+                triangleMesh.getPoints().addAll((float) ((float) p3D.getX() + this.center.getX()),
+                        (float) ((float) p3D.getY() + this.center.getY()),
+                        (float) ((float) p3D.getZ() + this.center.getZ()));
                 theta += (thetamax - thetamin) / triangles;
             }
             phi += (phimax - phimin) / triangles;
@@ -64,11 +68,11 @@ public class Sphere implements Primitive {
     }
 
     /**
-     * setRadius ONLY changes the attribute
      * @param radius positive integer
      */
     public void setRadius(int radius) {
         this.radius = radius;
+        buildTriangleMesh();
     }
 
     public Point3D getCenter() {
