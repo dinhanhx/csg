@@ -6,7 +6,7 @@ import javafx.scene.shape.TriangleMesh;
 public class Cube implements Primitive{
     private int sideLength;
     private Point3D center;
-    private final TriangleMesh triangleMesh;
+    private TriangleMesh triangleMesh;
 
     /**
      *
@@ -17,10 +17,17 @@ public class Cube implements Primitive{
         this.sideLength = sideLength;
         this.center = center;
 
+        // The magic starts here
+        buildTriangleMesh();
+    }
+
+    private void buildTriangleMesh() {
+        // TODO make this work with this.center
+
         // NOTE: still create mesh for degenerated box
-        float hw = sideLength / 2f;
-        float hh = sideLength / 2f;
-        float hd = sideLength / 2f;
+        float hw = this.sideLength / 2f;
+        float hh = this.sideLength / 2f;
+        float hd = this.sideLength / 2f;
 
         float[] points = {
                 -hw, -hh, -hd,
@@ -69,14 +76,24 @@ public class Cube implements Primitive{
         return sideLength;
     }
 
+    /**
+     *
+     * @param sideLength integer
+     */
     public void setSideLength(int sideLength) {
         this.sideLength = sideLength;
+        buildTriangleMesh();
     }
 
     public Point3D getCenter() {
         return center;
     }
 
+    /**
+     *
+     * setCenter ONLY change the attribute
+     * @param center Point3D
+     */
     public void setCenter(Point3D center) {
         this.center = center;
     }
