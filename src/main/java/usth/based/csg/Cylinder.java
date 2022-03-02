@@ -187,6 +187,7 @@ public class Cylinder implements Primitive{
         triangleMesh.getTexCoords().setAll(tPoints);
         triangleMesh.getFaces().setAll(faces);
         //triangleMesh.getFaceSmoothingGroups().setAll(smoothing);
+        this.height = this.height * 2;
     }
 
     @Override
@@ -200,7 +201,7 @@ public class Cylinder implements Primitive{
      *
      * @param radius integer
      */
-    public void setRadius(int radius) {
+    public void setRadius(float radius) {
         this.radius = radius;
         buildTriangleMesh();
     }
@@ -214,14 +215,14 @@ public class Cylinder implements Primitive{
     }
 
     public float getHeight() {
-        return height;
+        return this.height;
     }
 
     /**
      *
      * @param height integer
      */
-    public void setHeight(int height) {
+    public void setHeight(float height) {
         this.height = height;
         buildTriangleMesh();
     }
