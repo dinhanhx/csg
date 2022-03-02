@@ -23,6 +23,11 @@ class CubeTest {
     @Test
     @Disabled
     void setSideLength() {
+        int dummySideLength = 128;
+        Cube cube = new Cube(dummySideLength, Point3D.ZERO);
+        int newDummySideLength = 64;
+        cube.setSideLength(newDummySideLength);
+        assert cube.getSideLength() == newDummySideLength;
     }
 
     @Test
