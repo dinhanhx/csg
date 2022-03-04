@@ -1,18 +1,12 @@
 package tree;
 
-import shape.Circle;
 
 public class TreeNode {
+    String value;
+    TreeNode left;
+    TreeNode right;
 
-	public Circle rootCircle;
-	public TreeNode leftCircle;
-	public TreeNode rightCircle;
-	public boolean highlightFlag;
-
-	public TreeNode(Circle rootCircle, TreeNode leftCircle, TreeNode rightCircle) {
-		this.rootCircle = rootCircle;
-		this.leftCircle = null;
-		this.rightCircle = null;
-	}
-
+    public TreeNode(String value) {
+        this.value = value;
+    }
 }
