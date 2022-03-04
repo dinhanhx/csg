@@ -74,7 +74,7 @@ public class Importer3D {
                         }
                     }
                 } catch (ClassNotFoundException | InstantiationException | IllegalAccessException e) {
-                    // FAIL SILENTLY
+
                 }
             }
             if (fail) throw new IOException("Unknown 3D file format [" + extension + "]");
