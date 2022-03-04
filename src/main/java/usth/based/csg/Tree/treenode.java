@@ -1,6 +1,5 @@
 package tree;
 
-
 public class TreeNode {
     String value;
     TreeNode left;
