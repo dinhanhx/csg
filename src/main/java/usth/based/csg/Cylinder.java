@@ -35,6 +35,10 @@ public class Cylinder implements Primitive{
         final int tcCount = (this.div + 1) * 4 + 1; // 2 cap tex
         final int faceCount = this.div * 4;
 
+        double centerx = this.basePoint.getX();
+        double centery = this.basePoint.getY();
+        double centerz = this.basePoint.getZ();
+
         float textureDelta = 1.f / 256;
 
         float dA = 1.f / this.div;
@@ -181,6 +185,13 @@ public class Cylinder implements Primitive{
         }
         for (int i = this.div * 2; i < this.div * 4; ++i) {
             smoothing[i] = 2;
+        }
+
+        for (int i = 0; i <nPonits; i++)
+        {
+            points[i*3] += centerx;
+            points[i*3+1] += centery;
+            points[i*3+2] += centerz;
         }
         this.triangleMesh = new TriangleMesh();
         triangleMesh.getPoints().setAll(points);

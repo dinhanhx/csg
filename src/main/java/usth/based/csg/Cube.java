@@ -28,7 +28,9 @@ public class Cube implements Primitive{
         float hw = this.sideLength / 2f;
         float hh = this.sideLength / 2f;
         float hd = this.sideLength / 2f;
-
+        double centerx = this.center.getX();
+        double centery = this.center.getY();
+        double centerz = this.center.getZ();
         float[] points = {
                 -hw, -hh, -hd,
                 hw, -hh, -hd,
@@ -38,7 +40,12 @@ public class Cube implements Primitive{
                 hw, -hh,  hd,
                 hw,  hh,  hd,
                 -hw,  hh,  hd};
-
+        for (int i = 0; i <8; i++)
+        {
+            points[i*3] += centerx;
+            points[i*3+1] += centery;
+            points[i*3+2] += centerz;
+        }
         float[] texCoords = {0, 0, 1, 0, 1, 1, 0, 1};
 
         // Specifies hard edges.

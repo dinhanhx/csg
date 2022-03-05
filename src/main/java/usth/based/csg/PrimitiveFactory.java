@@ -24,7 +24,7 @@ public class PrimitiveFactory {
         }
 
         if (type.equalsIgnoreCase("PYRAMID")) {
-            return new Pyramid(1, Point3D.ZERO);
+            return new Pyramid(1,1, Point3D.ZERO);
         }
 
         if (type.equalsIgnoreCase("PARALLELEPIPED")) {
