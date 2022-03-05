@@ -21,20 +21,30 @@ class CylinderTest {
     }
 
     @Test
-    @Disabled
     void setRadius() {
+        float dummyRadius = 128;
+        Cylinder cylinder = new Cylinder(64, dummyRadius, 256, Point3D.ZERO);
+        float newDummyRadius = 64;
+        cylinder.setRadius(newDummyRadius);
+        assert cylinder.getRadius() == newDummyRadius;
     }
 
     @Test
     void getHeight() {
         float dummyHeight = 256;
         Cylinder cylinder = new Cylinder(64, 128, dummyHeight, Point3D.ZERO);
-        assert cylinder.getHeight() == dummyHeight;
+        assert (int) cylinder.getHeight() == (int) dummyHeight;
     }
 
     @Test
-    @Disabled
     void setHeight() {
+        float dummyHeight = 256;
+        Cylinder cylinder = new Cylinder(64, 128, dummyHeight, Point3D.ZERO);
+        float newDummyHeight = 128;
+        cylinder.setHeight(newDummyHeight);
+        System.out.println(cylinder.getHeight());
+        System.out.println(newDummyHeight);
+        assert (int) cylinder.getHeight() == (int) newDummyHeight;
     }
 
     @Test

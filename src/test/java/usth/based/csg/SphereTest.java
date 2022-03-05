@@ -22,8 +22,12 @@ class SphereTest {
     }
 
     @Test
-    @Disabled
     void setRadiusTest() {
+        int dummyRadius = 128;
+        Sphere sphere = new Sphere(dummyRadius, Point3D.ZERO);
+        int newRadius = 64;
+        sphere.setRadius(newRadius);
+        assert sphere.getRadius() == newRadius;
     }
 
     @Test
