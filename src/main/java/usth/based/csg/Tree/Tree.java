@@ -27,20 +27,14 @@ public class TreeAlgorithms {
     }
 
     public static TreeNode createData() {
-        TreeNode a = new TreeNode("a");
-        TreeNode b = new TreeNode("b");
-        TreeNode c = new TreeNode("c");
-        TreeNode d = new TreeNode("d");
-        TreeNode e = new TreeNode("e");
-        TreeNode f = new TreeNode("f");
-        TreeNode g = new TreeNode("g");
+        TreeNode a = new TreeNode("PrimitiveObject1");
+        TreeNode b = new TreeNode("PrimitiveObject2");
+        TreeNode c = new TreeNode("PrimitiveObject3");
+        TreeNode d = new TreeNode("PrimitiveObject4");
+        TreeNode e = new TreeNode("PrimitiveObject5");
+        TreeNode f = new TreeNode("PrimitiveObject6");
+        TreeNode g = new TreeNode("PrimitiveObject7");
 
-        a.left = b;
-        a.right = g;
-        b.left = c;
-        b.right = d;
-        c.left = e;
-        e.right = f;
 
         return a;
     }

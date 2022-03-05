@@ -1,7 +1,7 @@
 package tree;
 
 public class TreeNode {
-    String value;
+    Primitive Object;
     TreeNode left;
     TreeNode right;
 
