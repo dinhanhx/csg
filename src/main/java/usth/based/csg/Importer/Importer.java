@@ -13,7 +13,7 @@ import javafx.util.Pair;
 
 import java.util.ServiceLoader;
 
-public class Importer3D {
+public class Importer {
 
 
     public static String[] getSupportedFormatExtensionFilters() {
