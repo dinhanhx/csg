@@ -1,4 +1,4 @@
-package Importer3D;
+package Importer;
 
 import java.io.IOException;
 import java.net.URL;
