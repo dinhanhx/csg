@@ -15,9 +15,11 @@ class PyramidTest {
 
     @Test
     void getBasePointToVertexDistance() {
-        int dummyBasePointToVertexDistance = 128;
-        Pyramid pyramid = new Pyramid(dummyBasePointToVertexDistance, Point3D.ZERO);
-        assert pyramid.getBasePointToVertexDistance() == dummyBasePointToVertexDistance;
+        float dummyheight = 128;
+        float dummyhypotenuse = 64;
+        Pyramid pyramid = new Pyramid(dummyhypotenuse,dummyheight, Point3D.ZERO);
+        assert pyramid.getHeight() == dummyheight;
+        assert pyramid.getHypotenuse() == dummyhypotenuse;
     }
 
     @Test
@@ -28,12 +30,12 @@ class PyramidTest {
     @Test
     void getBasePoint() {
         Point3D dummyPoint3D = Point3D.ZERO;
-        Pyramid pyramid = new Pyramid(128, dummyPoint3D);
-        assert pyramid.getBasePoint().equals(dummyPoint3D);
+        Pyramid pyramid = new Pyramid(64,128, dummyPoint3D);
+        assert pyramid.getCenter().equals(dummyPoint3D);
     }
 
     @Test
     @Disabled
-    void setBasePoint() {
+    void setCenter() {
     }
 }

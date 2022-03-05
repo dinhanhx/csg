@@ -4,22 +4,63 @@ import javafx.geometry.Point3D;
 import javafx.scene.shape.TriangleMesh;
 
 public class Pyramid implements Primitive{
-    private int basePointToVertexDistance;
-    private Point3D basePoint;
-    private final TriangleMesh triangleMesh;
+    private float height;
+    private float hypotenuse;
+    private Point3D center;
+    private TriangleMesh triangleMesh;
 
     /**
      *
-     * @param basePointToVertexDistance positive integer - the radius of the circumscribed sphere
-     * @param basePoint Point3D - center of Pyramid
-     * https://en.wikipedia.org/wiki/Tetrahedron#Coordinates_for_a_regular_tetrahedron
+     * @param height positive integer
+     * @param center Point3D
      */
-    public Pyramid(int basePointToVertexDistance, Point3D basePoint) {
-        this.basePointToVertexDistance = basePointToVertexDistance;
-        this.basePoint = basePoint;
+    public Pyramid(float hypotenuse, float height, Point3D center) {
+        this.height = height;
+        this.center = center;
+        this.hypotenuse = hypotenuse;
 
-        // TODO un-null triangleMesh
-        this.triangleMesh = null;
+        // The magic starts here
+        buildTriangleMesh();
+    }
+
+    private void buildTriangleMesh() {
+        // TODO make this work with this.center
+
+        double centerx = this.center.getX();
+        double centery = this.center.getY();
+        double centerz = this.center.getZ();
+        float[] points = {
+                0,0,0,
+                0, height, -hypotenuse/2,
+                -hypotenuse/2, height, 0,
+                hypotenuse/2, height, 0,
+                0, height, hypotenuse/2};
+        for (int i = 0; i <5; i++)
+        {
+            points[i*3] += centerx;
+            points[i*3+1] += centery;
+            points[i*3+2] += centerz;
+        }
+        float[] texCoords = {0, 0, 1, 0, 1, 1, 0, 1};
+
+        // Specifies hard edges.
+        int faceSmoothingGroups[] = {
+                0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        };
+
+        int[] faces = {
+                0,0,2,0,1,0,
+                0,0,1,0,3,0,
+                0,0,3,0,4,0,
+                0,0,4,0,2,0,
+                4,0,1,0,2,0,
+                4,0,3,0,1,0
+        };
+
+        this.triangleMesh = new TriangleMesh();
+        triangleMesh.getPoints().setAll(points);
+        triangleMesh.getTexCoords().setAll(texCoords);
+        triangleMesh.getFaces().setAll(faces);
     }
 
     @Override
@@ -27,19 +68,34 @@ public class Pyramid implements Primitive{
         return this.triangleMesh;
     }
 
-    public int getBasePointToVertexDistance() {
-        return basePointToVertexDistance;
+    public float getHeight() {
+        return height;
+    }
+    public float getHypotenuse() {
+        return hypotenuse;
+    }
+    /**
+     *
+     * @param height integer
+     */
+    public void setHeight(float height) {
+        this.height = height;
+        buildTriangleMesh();
+    }
+    public void setHypotenuse(float hypotenuse) {
+        this.hypotenuse = hypotenuse;
+        buildTriangleMesh();
+    }
+    public Point3D getCenter() {
+        return center;
     }
 
-    public void setBasePointToVertexDistance(int basePointToVertexDistance) {
-        this.basePointToVertexDistance = basePointToVertexDistance;
-    }
-
-    public Point3D getBasePoint() {
-        return basePoint;
-    }
-
-    public void setBasePoint(Point3D basePoint) {
-        this.basePoint = basePoint;
+    /**
+     *
+     * setCenter ONLY change the attribute
+     * @param center Point3D
+     */
+    public void setCenter(Point3D center) {
+        this.center = center;
     }
 }

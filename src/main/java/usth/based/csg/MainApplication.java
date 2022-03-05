@@ -22,14 +22,16 @@ public class MainApplication extends Application {
 
         Cylinder cy1 = new Cylinder(64,30f,100f,new Point3D(200, 50, 0));
         Cube cube = new Cube(50, new Point3D(100, 0, 0));
+        Pyramid py = new Pyramid(100,100, new Point3D(100, 0, 0));
         TriangleMesh bo = cube.getTriangleMesh();
         TriangleMesh cy = cy1.getTriangleMesh();
+        TriangleMesh py1 = py.getTriangleMesh();
        // TriangleMesh um = union(sphere2.getTriangleMesh(), cy1.getTriangleMesh());
 //        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("main-view.fxml"));
 //        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
 
         Group root = new Group();
-        root.getChildren().addAll(new MeshView(cy));
+        root.getChildren().addAll(new MeshView(py1));
 
         Scene scene = new Scene(root, 600, 300);
         //Setting camera
